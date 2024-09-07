@@ -60,8 +60,7 @@
             display: flex;
             justify-content: center;
         }
-
-	.grid-container {
+		.grid-container {
             display: grid;
             place-items: center;
         }
