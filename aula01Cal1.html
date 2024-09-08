@@ -12,27 +12,43 @@
 	<!DOCTYPE html>
 		<html lang="pt-BR">
 		
-		<!--  MathJax -->
-		</script>
-		<script type="text/javascript" async
-		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
-		</script>
+<!--  MathJax -->
+		
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-		<!--  Configuração do MathJax para o display de equações -->
-		<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({
-			tex2jax: {
-				inlineMath: [['$','$']],
-				displayMath: [['$$','$$']],
-				processEscapes: true
-			}
-		});
-		</script>
 
-		<!--  Configuração do arquivo principal -->
-		<script type="text/javascript" async
-		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
-		</script>
+<!-- Configuração personalizada do MathJax -->
+<script type="text/javascript">
+  MathJax = {
+    tex: {
+      packages: ['base', 'ams', 'color'],  // Inclui pacotes adicionais
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],  // Suporte para equações em bloco
+    }
+  };
+</script>
+
+		<!-- MathJax 3.x com pacotes TeX adequados -->
+<script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<!--  Configuração do arquivo principal -->
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+
 		<link rel="stylesheet" href="styles.css">
 		<head>
 		<meta charset="UTF-8">
@@ -42,7 +58,7 @@
 		</head>
 
 
-<!-- Configurações para o VÍDEO responsivo -->
+<!-- BOTÃO de redirecionamento para incorporação de vídeo via proxy -->
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
@@ -54,24 +70,21 @@
 
 
  <style>
-        /* Estilo para o container responsivo do vídeo */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background-color: #000;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .button {
+            background-color: #007bff; 
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
+
 
 
 
@@ -92,9 +105,10 @@ margin-top: 10px;
 }
 #botao {
 margin-top: 10px;
+font-size: 16px;
 cursor: pointer;
-padding: 10px;
-background-color: #007BFF;
+padding: 10px 20px;
+background-color: #007bff; 
 color: white;
 border: none;
 border-radius: 5px;
@@ -194,8 +208,16 @@ background-color: #0056b3;
 
     	<h2>Seção 4: Disposição de Equações</h2>
     	<p>
-    	Você pode escrever fórmulas inline como $a^2 + b^2 = c^2$ e fórmulas em display como $$\int_a^b f(x)dx$$
+    	Você pode escrever fórmulas inline como \(a^2 + b^2 = c^2\) e fórmulas em display como $$\int_a^b f(x)dx$$
     	</p>
+
+    	<p> $$
+	r_1\colon \frac{x-1}{2}=-y;\hspace{.5cm} z=3\hspace{.5cm} \mathrm{e}\hspace{.5cm} r_2\colon\begin{cases}
+		x=t  \\ y=-1+t \\ z=2+t
+	\end{cases} $$
+</p>
+
+<p> $$ \begin{align} f\colon\mathbb{R} & \rightarrow\mathbb{R} \\ x & \mapsto f(x)=2x^2-4  \end{align}$$</p>
 
 
 
@@ -252,19 +274,15 @@ background-color: #0056b3;
 
 	<h2>Seção 6: Assistir ao Vídeo Responsivo</h2>
 	<p>
-   	Sugestão de vídeo:
+   	O YouTube não permite. Alternativa: redirecionar. Por exemplo:
  	</p>
 
+<a href="redirect.html" class="button">Assistir ao Vídeo</a>
 
 
-<div class="video-container">
-        <!-- Link do vídeo do YouTube no iframe -->
-        <iframe src="https://youtu.be/nQIV9rjvsDg" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-    </div>
+
+
+
 
 <!--  Nota de rodapé -->
 
