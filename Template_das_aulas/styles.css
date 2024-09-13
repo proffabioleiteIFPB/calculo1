@@ -136,3 +136,17 @@
             max-width: 800px; /* largura máxima */
             height: 100%; /* altura responsiva */
         }
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    #ggbApplet {
+        width: 100%;
+        aspect-ratio: 4 / 3; /* Alterar proporção em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    #ggbApplet {
+        width: 100%;
+        aspect-ratio: 1 / 1; /* Proporção quadrada para telas muito pequenas */
+    }
+}
