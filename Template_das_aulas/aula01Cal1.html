@@ -58,7 +58,7 @@
 		</head>
 
 
-<!-- BOTÃO de redirecionamento para incorporação de vídeo via proxy -->
+<!-- Configuração dos botões -->
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
@@ -68,55 +68,81 @@
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-
- <style>
-        .button {
-            background-color: #007bff; 
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-    </style>
-
-
-
-
-<!--  Botão EXIBIR-OCULTAR -- Configuração -->
-
-<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 <style>
-#texto {
-display: none; /* O texto começa oculto */
-margin-top: 10px;
+/* Estilos para os botões de exibir/ocultar e para o link do vídeo */
+.toggle-button, .button {
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
 }
-#botao {
-margin-top: 10px;
-font-size: 16px;
-cursor: pointer;
-padding: 10px 20px;
-background-color: #007bff; 
-color: white;
-border: none;
-border-radius: 5px;
+
+.toggle-button:hover, .button:hover {
+    background-color: #0056b3;
 }
-#botao:hover {
-background-color: #0056b3;
+
+/* O texto e o applet começam ocultos */
+.hidden-content {
+    display: none;
+    margin-top: 10px;
 }
 </style>
+
+
+
+
+
+
+<script>
+    function mostrarOcultarSolucao() {
+        var texto = document.getElementById("textoSolucao");
+        var botao = document.getElementById("botaoSolucao");
+        if (texto.style.display === "none") {
+            texto.style.display = "block";
+            botao.innerHTML = "Ocultar Solução";
+        } else {
+            texto.style.display = "none";
+            botao.innerHTML = "Exibir Solução";
+        }
+    }
+
+    function toggleVisibilityApplet() {
+        var appletDiv = document.getElementById("ggbApplet");
+        var botao = document.getElementById("botaoApplet");
+        if (appletDiv.style.display === "none") {
+            appletDiv.style.display = "block";
+            botao.innerHTML = "Ocultar Applet";
+        } else {
+            appletDiv.style.display = "none";
+            botao.innerHTML = "Exibir Applet";
+        }
+    }
+</script>
+
+
+
+
+<!--  Script para inclusão do GeoGebra -->
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+
+
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
 
 
 <!--  Título da aula -->
@@ -253,27 +279,11 @@ a &amp; b \\ 0 &amp; -1 \\  x &amp; y
     	Exercício
     	</p>
 
-
-    	<button id="botao" onclick="mostrarOcultar()">Exibir Solução</button>
-		<div id="texto">
-		<p style="color: gray;">Solução: este é o texto que será exibido ou oculto quando o botão for clicado.</p>
-		</div>
-
-
-		<script>
-		function mostrarOcultar() {
-		var texto = document.getElementById("texto");
-		var botao = document.getElementById("botao");
-		if (texto.style.display === "none") {
-		texto.style.display = "block";
-		botao.innerHTML = "Ocultar Solução";
-		} else {
-		texto.style.display = "none";
-		botao.innerHTML = "Exibir Solução";
-		}
-		}
-		</script>
-		</section>
+<!-- Botão para exibir/ocultar solução -->
+<button id="botaoSolucao" class="toggle-button" onclick="mostrarOcultarSolucao()">Exibir Solução</button>
+<div id="textoSolucao" class="hidden-content">
+    <p style="color: gray;">Solução: este é o texto que será exibido ou oculto quando o botão for clicado.</p>
+</div>
 
 
 <!-- Seção 6 -->
@@ -291,10 +301,115 @@ a &amp; b \\ 0 &amp; -1 \\  x &amp; y
    	O YouTube não permite. Alternativa: redirecionar. Por exemplo:
  	</p>
 
-<a href="redirect.html" class="button">Assistir ao Vídeo</a>
+<!-- Botão de assistir ao vídeo dentro da solução -->
+    <a href="redirect.html" class="button">Assistir ao Vídeo</a>
 
 
 
+
+
+
+<!--  Incluir uma Janela do GeoGebra -->
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+	<h2>Seção 7: Animação no GeoGegra</h2>
+
+
+<p>Template para incorporação de applet GeoGebra responsivo. Para novos applets, basta substituir o conteúdo após "ggbBase64" pelo conteúdo do novo applet.</p>
+
+
+
+
+
+
+<!-- início do botão -->
+
+<!-- Botão para exibir/ocultar applet -->
+<button id="botaoApplet" class="toggle-button" onclick="toggleVisibilityApplet()">Exibir Applet</button>
+<div id="ggbApplet" class="hidden-content">
+    <!-- Aqui você coloca o applet ou conteúdo desejado -->
+
+ 
+
+<div id="ggbContainer">
+    <div id="ggbApplet"></div>
+ <!-- Faz com que a janela seja responsiva -->
+ </div>
+
+<script>
+var parameters = {
+"id": "ggbApplet",
+/* "width":1600,
+"height":900,      largura e altura fixos removidos para permitir responsividade      */
+"showMenuBar":false,
+"showAlgebraInput":true,
+"showToolBar":false,
+"customToolBar":"0 73 62 | 1 501 67 , 5 19 , 72 75 76 | 2 15 45 , 18 65 , 7 37 | 4 3 8 9 , 13 44 , 58 , 47 | 16 51 64 , 70 | 10 34 53 11 , 24  20 22 , 21 23 | 55 56 57 , 12 | 36 46 , 38 49  50 , 71  14  68 | 30 29 54 32 31 33 | 25 17 26 60 52 61 | 40 41 42 , 27 28 35 , 6",
+"showToolBarHelp":false,
+"showResetIcon":false,
+"enableLabelDrags":false,
+"enableShiftDragZoom":true,
+"enableRightClick":false,
+"errorDialogsActive":false,
+"useBrowserForJS":false,
+"allowStyleBar":false,
+"preventFocus":false,
+"showZoomButtons":true,
+"capturingThreshold":3,
+// add code here to run when the applet starts
+"appletOnLoad":function(api){ /* api.evalCommand('Segment((1,2),(3,4))');*/ },
+"showFullscreenButton":true,
+"scale":1, 
+"disableAutoScale":false,
+"allowUpscale":false,
+"clickToLoad":false,
+"appName":"classic",
+"buttonRounding":0.7,
+"buttonShadows":false,
+"language":"pt",
+// use this instead of ggbBase64 to load a material from geogebra.org
+// "material_id":"RHYH3UQ8",
+// use this instead of ggbBase64 to load a .ggb file
+// "filename":"myfile.ggb",
+"ggbBase64":"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",
+};
+// is3D=is 3D applet using 3D view, AV=Algebra View, SV=Spreadsheet View, CV=CAS View, EV2=Graphics View 2, CP=Construction Protocol, PC=Probability Calculator DA=Data Analysis, FI=Function Inspector, macro=Macros
+var views = {'is3D': 0,'AV': 1,'SV': 0,'CV': 0,'EV2': 0,'CP': 0,'PC': 0,'DA': 0,'FI': 0,'macro': 0};
+var applet = new GGBApplet(parameters, '5.0', views);
+window.onload = function() {applet.inject('ggbApplet')};
+applet.setPreviewImage('data:image/gif;base64,R0lGODlhAQABAAAAADs=','https://www.geogebra.org/images/GeoGebra_loading.png','https://www.geogebra.org/images/applet_play.png');
+</script>
+
+
+
+
+
+
+
+
+
+<!-- Fim do botão -->
+
+<script>
+    function toggleVisibility() {
+        var appletDiv = document.getElementById("ggbApplet");
+        var button = document.querySelector("button");
+        if (appletDiv.style.display === "none") {
+            appletDiv.style.display = "block";
+            button.innerHTML = "Ocultar Applet";
+        } else {
+            appletDiv.style.display = "none";
+            button.innerHTML = "Exibir Applet";
+        }
+    }
+</script>
 
 
 
@@ -309,6 +424,9 @@ a &amp; b \\ 0 &amp; -1 \\  x &amp; y
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
+
+
+</section>
 
 		<footer>
 		<p>Prof. Fábio Leite - IFPB, Campus Monteiro © 2024</p>
