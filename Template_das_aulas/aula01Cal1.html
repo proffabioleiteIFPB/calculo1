@@ -27,9 +27,10 @@
 <script type="text/javascript">
   MathJax = {
     tex: {
-      packages: ['base', 'ams', 'color'],  // Inclui pacotes adicionais
+      packages: ['base', 'ams', 'color', 'cancel'],  // Inclui pacotes adicionais o cancel serve para riscar termos numa equações
       displayMath: [['$$', '$$'], ['\\[', '\\]']],  // Suporte para equações em bloco
-    }
+    },
+        loader: { load: ['[tex]/cancel', '[tex]/color'] } // Carrega os pacotes extras explicitamente
   };
 </script>
 
@@ -233,6 +234,12 @@
     	<p>
     	Você pode escrever fórmulas inline como \(a^2 + b^2 = c^2\) e fórmulas em display como $$\int_a^b f(x)dx$$
     	</p>
+
+
+<p>$$\begin{align} \cancel{\color{red}y}+2x=3+\cancel{\color{red}y}\end{align}$$</p>
+
+<p>$$\cancelto{\color{red} 0}{x + y}$$</p>
+
 
     	<p> $$ \begin{align}
 	&r_1\colon \frac{x-1}{2}=-y;\hspace{.5cm} z=3\hspace{.5cm} \\ &\mathrm{e}\hspace{.5cm} r_2\colon\begin{cases}
